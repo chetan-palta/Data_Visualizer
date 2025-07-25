@@ -1,134 +1,143 @@
+```markdown
 # 📊 Data Visualizer
 
-A Python-based interactive data visualization tool that reads a CSV file and plots various charts using **pandas**, **matplotlib**, and **seaborn**. Ideal for quick analysis of sales, expenses, profits, or any structured data — directly from the terminal.
+A full-feature Python project for exploring CSV data interactively—using:
+- ✅ **CLI script** (`main.py`)
+- ✅ **Streamlit web app** (`web_app.py`)
+- ✅ **Jupyter dashboard** (`dashboard.ipynb`)
+
+Works entirely **offline**, no deployment required.
 
 ---
 
-## 🚀 Features
+## 🚀 Features Overview
 
-* 📁 Load any CSV file
-* 🧹 Filter data by **Month** and/or **Region**
-* 📈 Plot the following chart types:
+### 🖥️ CLI Tool (`main.py`)
+- Choose plot theme (`darkgrid`, `whitegrid`, etc.)
+- Browse and load any CSV file from folder
+- Filter data by **Region** or **Month**
+- Detect numeric/categorical columns automatically
+- Generate charts: line, bar, scatter, histogram, box
+- Compare two charts side-by-side
+- Save plots to `/charts`
+- Show data insights: peak sales month, top region, expenses hotspot
 
-  * Line Chart
-  * Bar Chart
-  * Pie Chart
-  * Scatter Plot
-  * Histogram
-  * Box Plot
-  * Heatmap
-* 💾 Option to save charts as `.png` images
-* 🧪 Supports random CSV generation for testing (`sample2.csv` with 100+ rows)
+### 🌐 Streamlit Web App (`web_app.py`)
+- Upload and preview CSV in browser
+- Clean data and drop missing rows automatically
+- Interactive filters via sidebar (Region, Month)
+- Plot chart types and compare two side-by-side
+- Download filtered data as CSV or Excel
+- Forecast future values (e.g., Sales) using time-series model
+- Export a PDF report with insights
+- Choose from multiple plot themes
+
+### 📓 Jupyter Dashboard (`dashboard.ipynb`)
+- Fully interactive widget-based interface
+- Dropdowns for selecting CSV, X/Y columns, chart type
+- Real-time plot previews
+- Region/Month filters as dropdowns
+- Button to save charts to `/charts`
+
+---
+
+## 📂 Project Structure
+
+```
+
+Data\_Visualizer/
+├── main.py              # CLI version
+├── web\_app.py           # Streamlit web app
+├── dashboard.ipynb      # Interactive Jupyter notebook
+├── charts/              # Saved plot images
+├── reports/             # Generated PDF reports
+├── sample.csv
+├── sample2.csv
+├── README.md
+
+````
+
+---
+
+## ▶️ How to Use This Tool
+
+### CLI Tool
+
+```bash
+python main.py
+````
+
+Follow prompts to select theme, file, filters, columns, and chart options.
+
+---
+
+### Streamlit Web App
+
+```bash
+streamlit run web_app.py
+```
+
+Use the sidebar to filter data, generate charts, download data, forecast trends, and generate PDF reports.
+
+---
+
+### Jupyter Dashboard
+
+```bash
+jupyter notebook dashboard.ipynb
+```
+
+Interact with UI controls inline to explore your data and save charts with a button click.
 
 ---
 
 ## 📦 Requirements
 
-* Python 3.7+
-* Libraries:
-
-  * pandas
-  * matplotlib
-  * seaborn
-
-Install dependencies:
+Install all necessary Python packages:
 
 ```bash
-pip install pandas matplotlib seaborn
+pip install pandas matplotlib seaborn streamlit fpdf statsmodels xlsxwriter openpyxl ipywidgets
 ```
 
 ---
 
-## 🛠️ How to Use
+## 📝 Summary of Features Added
 
-### 1. Clone the Repo
-
-```bash
-git clone https://github.com/chetan-palta/Data_Visualizer.git
-cd Data_Visualizer
-```
-
-### 2. Run the Script
-
-```bash
-python main.py
-```
-
-### 3. Interact via Terminal
-
-* Choose to generate sample data (optional)
-* Load your CSV (`sample.csv` or `sample2.csv`)
-* Select filters (Month, Region)
-* Choose X and Y columns
-* Pick chart type
-* View or save the chart
-
----
-
-## 📂 Example CSV Format
-
-```csv
-Month,Region,Sales,Expenses,Profit
-Jan,North,2000,1000,1000
-Feb,South,2500,1500,1000
-Mar,East,3000,1800,1200
-```
-
-You can generate a test CSV with 100+ rows by selecting the "generate" option when prompted.
-
----
-
-## 📸 Screenshots
-
-| Filter Prompt              | Bar Chart Output     |
+| Feature                    | Available As         |
 | -------------------------- | -------------------- |
-| ![Filter](filter_data.png) | ![Bar](barchart.png) |
-
-![Scatter Plot](scatterplot.png)
-![Heatmap](heatmap.png)
-![Pie Chart](piechart.png)
-
----
-
-## 📁 File Structure
-
-```
-Data_Visualizer/
-├── main.py           # Main visualization script
-├── sample.csv        # Default sample data
-├── sample2.csv       # Random test data (generated)
-├── README.md         # You're reading it 😉
-├── filter_data.png   # Screenshot of filter UI
-├── barchart.png      # Sample bar chart
-├── scatterplot.png   # Sample scatter plot
-├── heatmap.png       # Sample heatmap
-├── piechart.png      # Sample pie chart
-```
+| Theme selector             | CLI + Streamlit      |
+| CSV filtering              | All modes            |
+| Automatic column detection | CLI + Web + Notebook |
+| Side-by-side chart compare | CLI + Streamlit      |
+| CSV/Excel download         | Streamlit only       |
+| Sales/Expense forecasting  | Streamlit only       |
+| PDF report export          | Streamlit only       |
+| Jupyter interactive UI     | Dashboard notebook   |
 
 ---
 
-## ✅ To-Do / Future Enhancements
+## 🛠 Future Enhancements
 
-* [ ] Add GUI using Tkinter or PyQt
-* [ ] Export charts & data summaries to PDF/Excel
-* [ ] Add CLI arguments for automated usage
-* [ ] Add animation support for charts
-* [ ] Add dark/light theme toggle for UI version
+* Add drag-and-drop file upload in notebook
+* Support multi-dataset analysis
+* Include visual report in PDF with embedded charts
+* Package as desktop app via PyInstaller or Electron
 
 ---
 
-## 🧠 Author
+## 🧑‍💻 About the Author
 
-**Chetan Palta**
-🔗 [GitHub](https://github.com/chetan-palta)
-📬 [LinkedIn](https://www.linkedin.com/in/chetan-palta)
+**Chetan Palta** (Ludhiana, Punjab, India)
+GitHub: [chetan‑palta](https://github.com/chetan-palta) |
+LinkedIn: [chetan‑palta](https://linkedin.com/in/chetan-palta-b1281329b)
 
 ---
 
 ## 📄 License
 
-This project is open-source under the [MIT License](LICENSE).
+This project is open-source under the **MIT License**.
+
+```
 
 ---
 
-*This project is a work in progress. More features and visualizations coming soon!*
