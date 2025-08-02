@@ -1,4 +1,3 @@
-````markdown
 # 📊 Data Visualizer
 
 A powerful, fully offline Python project for exploring CSV data across 3 modes:
